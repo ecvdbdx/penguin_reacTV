@@ -1,3 +1,10 @@
+@import '../node_modules/bulma/sass/utilities/_all.sass';
+@import '../node_modules/bulma/sass/base/_all.sass';
+@import './../node_modules/bulma/sass/components/navbar.sass';
+@import '../node_modules/bulma/sass/elements/container.sass';
+@import './global/variables';
+@import "components/Header/Header";
+
 .App {
   text-align: center;
 }
