@@ -1,17 +1,34 @@
-# penguin_reacTV
-Cine App build with React - Jessica Ferreira &amp; Brandon Leininger
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![reacTV](./public/logo512.png "Title")
+===
+App build with React (CRA) - Jessica Ferreira &amp; Brandon Leininger  
+This project was developed with [Create React App](https://github.com/facebook/create-react-app).  
+This project is under the MIT licence.
 
-## Available Scripts
+## What it is ?
+This app, developed in the JavaScript course of ECV Digital's School of Bordeaux, is an App / website to check and review
+movies - using the [movieDB](https://www.themoviedb.org/) API.  
+In few words, you can check new movies, read some reviews and notation about it, and you can also see some teasers and posters !
+<!-- Durant le développement, il sera bon de mentionner (une fois la fonctionnalité créée) la possibilité de se connecter / s'enregistrer. -->
+<!-- Durant le développement, il sera bon de mentionner (une fois la fonctionnalité créée) la possibilité de créer / consulter des listes (favoris / à regarder plus tard). -->
+<!-- Durant le développement, il sera bon de mentionner (une fois la fonctionnalité créée) la possibilité de consulter le compte movieDB de l'utilisateur - si celui-ci en possède un (et a saisit ses infos pour que l'App puisse y accéder). -->
+ 
+## How to use
+### Requirements
+Before starting to use this App, you must have at least [NodeJS](https://nodejs.org/en/) installed on your computer.  
 
 In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+
+
+<br />
+
+#
+# Temporarly Markdown dedicated to project's developers  
+<br />The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `yarn test`
