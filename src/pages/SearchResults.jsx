@@ -45,14 +45,19 @@ class SearchResults extends Component{
             if(searchResults.length !== 0) {
                 return (
                     <div className="container">
-                        <h1>Results Page</h1>
+                        <h1 className='title'>Résultats de recherche</h1>
+                        <h2 className='subtitle'><i>Résultats pour la recherche : {query}</i></h2>
 
                         <div className="columns is-multiline">
                             {searchResults.map((movie) => {
                                 return (
-                                    // Next, we have to return <Movie /> component with needed props
+                                    // Next, we have to return <MovieList /> component with needed props
                                     <div className='column is-m-3' key={movie.id}>
-                                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt=""/>
+                                        {movie.poster_path ?
+                                            <img src={`${globalData.imgSrc}${movie.poster_path}`} alt={movie.title} />
+                                            :
+                                            <img src='https://via.placeholder.com/200x300' alt={movie.title}/>
+                                        }
                                         <h2>{movie.title}</h2>
                                     </div>
                                 )
@@ -69,7 +74,15 @@ class SearchResults extends Component{
         } else {
             return (
                 <div className="container">
-                    <h1>Please. Search something :)️</h1>
+                    <div className="tile is-parent">
+                        <article className="tile is-child notification is-danger">
+                            <p className="title">Oops, petit problème.</p>
+                            <p className="subtitle">Vous voyez le soucis ?</p>
+                            <div className="content">
+                                Essayez de saisir quelque chose dans la recherche... ;)
+                            </div>
+                        </article>
+                    </div>
                 </div>
             )
         }

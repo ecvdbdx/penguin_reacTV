@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import {Link, withRouter} from 'react-router-dom';
 
+
 class SearchBar extends Component{
     constructor(props) {
         super(props);
