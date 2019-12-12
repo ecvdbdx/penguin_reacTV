@@ -32,28 +32,48 @@ class SearchResults extends Component{
     _fetchDataSearch = async (query) => {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${globalData.apiKey}&query=${query}&language=fr`)
             .then(response => {
-                this.setState({searchResults: response.data.results ? response.data.results : []})
-                //console.log(this.state.searchResults)
+                this.setState({
+                    searchResults: response.data.results ? response.data.results : []
+                })
             })
     }
 
     render(){
-        const {searchResults} = this.state
-        return (
-            <div className="container">
-                <h1>Results Page</h1>
-                {searchResults.map((movie) => {
-                    console.log(movie)
-                    return (
-                        // Next, we have to return <Movie /> component with needed props
-                        <div key={movie.id}>
-                            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt=""/>
-                            <h2>{movie.title}</h2>
+        const {searchResults, query} = this.state;
+
+        if(query !== '') {
+            if(searchResults.length !== 0) {
+                return (
+                    <div className="container">
+                        <h1>Results Page</h1>
+
+                        <div className="columns is-multiline">
+                            {searchResults.map((movie) => {
+                                return (
+                                    // Next, we have to return <Movie /> component with needed props
+                                    <div className='column is-m-3' key={movie.id}>
+                                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt=""/>
+                                        <h2>{movie.title}</h2>
+                                    </div>
+                                )
+                            })}
                         </div>
-                    )
-                })}
-            </div>
-        )
+                    </div>
+                )
+            } else {
+                return (
+                    <div>No results</div>
+                )
+            }
+
+        } else {
+            return (
+                <div className="container">
+                    <h1>Please. Search something :)️</h1>
+                </div>
+            )
+        }
+
     }
 }
 
