@@ -6,6 +6,7 @@ import {
     Link
 } from "react-router-dom";
 import logo from './../../logo.svg';
+import MovieList from "../MovieList/MovieList";
 
 export function Header() {
     return (
@@ -37,7 +38,7 @@ export function Header() {
                         <About/>
                     </Route>
                     <Route path="/dashboard">
-                        <Dashboard/>
+                        <MovieList/>
                     </Route>
                 </Switch>
             </header>

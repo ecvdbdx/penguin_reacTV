@@ -60,7 +60,7 @@ export default class MovieList extends Component {
 
     render() {
         //const list = this.props.movies.map((movie, id) => <Movie {...movie} key={id}/>);
-        const list = this.dataMovies.map((movie, id)=> <Movie {...movie} key={id}/>);
+        const list = this.dataMovies.map((movie, id) => <Movie {...movie} key={id}/>);
         return (
             <div className="container">
                 <div className="columns is-multiline">
