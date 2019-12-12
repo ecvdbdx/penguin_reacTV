@@ -14,7 +14,7 @@ export default class Movie extends Component {
                 id={this.props.id}>
                 <div className="card-image">
                     <figure className="image is-4by3">
-                        <img src={`https://image.tmdb.org/t/p/w200/${this.props.poster_path}`} alt={this.props.title}/>
+                        <img src={`https://image.tmdb.org/t/p/w200/${this.props.poster_path}`} alt={this.props.title} className="img-card"/>
                     </figure>
                 </div>
                 <div className="card-content">
