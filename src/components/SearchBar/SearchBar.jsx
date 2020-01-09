@@ -16,7 +16,7 @@ class SearchBar extends Component{
     render() {
         return (
             <div className="SearchBar">
-                <form>
+                <form action='/searchresults'>
                     <div className="field has-addons">
                         <div className="control">
                             <input className="input" value={this.state.query} type="text" placeholder="Search a movie..."
@@ -25,15 +25,14 @@ class SearchBar extends Component{
                         </div>
                         <div className="control">
                             {this.state.query !== "" ? (
-                                <Link onKeyPress={() => console.log('press !')}
-                                    to={{pathname: '/searchresults', state: {search: this.state.query } }} >
+                                <Link to={{pathname: '/searchresults', state: {search: this.state.query } }} >
                                     <input type='submit' value='' className="hideElement" />
                                     <button className="button is-info">
                                         <FontAwesomeIcon icon={faSearch}/>
                                     </button>
                                 </Link>
                                 ) : (
-                                /* Display message to inform field can't be null (cf Bulma notifications) */
+                                /* Display message to inform that field can't be null (cf Bulma notifications) */
                                 <button className="button is-info">
                                     <FontAwesomeIcon icon={faSearch}/>
                                 </button>
