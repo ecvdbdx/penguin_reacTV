@@ -89,13 +89,10 @@ class SearchResults extends Component{
 
         let newResults;
         if(this.state.filterGenres && this.state.filterGenres?.length > 0) {
-            console.log(this.state.filterGenres)
             newResults = this.state.filterGenres.filter(film => ((film.vote_average) <= parseInt(stars)) && ((film.vote_average) >= parseInt(stars)-2) )
         }
         else
             newResults = this.state.searchResults.filter(film => ((film.vote_average) <= parseInt(stars)) && ((film.vote_average) >= parseInt(stars)-2) )
-
-        console.log(parseInt(stars), parseInt(stars)-2)
 
         this.setState({filterResults: newResults})
     }

@@ -8,18 +8,21 @@ import {
 import logo from './../../logo.svg';
 import SearchBar from './../SearchBar/SearchBar';
 import SearchResults from "../../pages/SearchResults";
+import HomePage from '../HomePage/HomePage'
 
 export function Header() {
     return (
         <Router>
             <header>
-                <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+                <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <img src={logo} alt="Logo ReacTV" className="svg-logo"/>
+                        <Link to='/' className="logo">
+                            <img src={logo} alt="Logo ReacTV" className="svg-logo"/>
+                        </Link>
                     </div>
                     <div id="navbarBasicExample" className="navbar-menu">
                         <div className="navbar-start">
-                            <Link to='/' className="navbar-item">
+                            <Link to='/trending' className="navbar-item">
                                 Trending
                             </Link>
                             <Link to='/about' className="navbar-item">
@@ -38,6 +41,9 @@ export function Header() {
                 </nav>
                 <Switch>
                     <Route exact path="/">
+                        <Home/>
+                    </Route>
+                    <Route path="/trending">
                         <Trending/>
                     </Route>
                     <Route path="/about">
@@ -52,11 +58,20 @@ export function Header() {
                 </Switch>
             </header>
         </Router>
-    ); }
+    );
+}
+
+function Home() {
+    return (
+      <div className="container">
+          <HomePage />
+      </div>
+    );
+}
 
 function Trending() {
     return (
-        <div>
+        <div className="container">
             <h2>Trending</h2>
         </div>
     );
@@ -64,7 +79,7 @@ function Trending() {
 
 function About() {
     return (
-        <div>
+        <div className="container">
             <h2>About</h2>
         </div>
     );
@@ -72,7 +87,7 @@ function About() {
 
 function Dashboard() {
     return (
-        <div>
+        <div className="container">
             <h2>Dashboard</h2>
         </div>
     );

@@ -8,3 +8,11 @@
 .img-card{
   object-fit: cover;
 }
+
+.teaser {
+  max-height: 10rem;
+  padding-right: 1rem;
+
+  .card-content {display: none}
+  .card-footer {display: none}
+}

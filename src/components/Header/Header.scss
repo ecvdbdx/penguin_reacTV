@@ -1,5 +1,23 @@
-.svg-logo {
-  width: 140px;
-  height: auto;
-  margin-left: 5px;
+.navbar{
+  color: white;
+
+  .svg-logo {
+    width: 140px;
+    height: auto;
+    margin-left: 5px;
+  }
+
+  .navbar-brand {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-item {
+    font-size: .85rem;
+    color: white;
+
+    &:hover, &:focus{
+      color: #CEA95E;
+    }
+  }
 }
